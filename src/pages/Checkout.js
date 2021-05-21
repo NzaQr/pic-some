@@ -52,7 +52,7 @@ export default function Checkout() {
   }
 
   return (
-    <div className="account-container">
+    <div className="checkout-container">
       <h1 className="checkout-title">Check Out</h1>
       <div className="cart-items">{cartItemElements}</div>
       <p className="total">Total: {totalCost}</p>

@@ -1,3 +1,10 @@
+.checkout-container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: #1d3557;
+}
+
 .checkout-title {
   font-family: "Fredoka One", cursive;
   font-size: 2rem;
