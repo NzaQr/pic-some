@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import CartItem from "../components/CartItem";
 import { PhotosContext } from "../contexts/PhotoContext";
 import { useAuth } from "../contexts/AuthContext";
+import "./Checkout.css";
+import { Link } from "react-router-dom";
 
 export default function Checkout() {
   const { currentUser } = useAuth();
@@ -20,13 +22,24 @@ export default function Checkout() {
 
   function orderMessage() {
     if (cartItems.length > 0 && currentUser) {
-      return <button onClick={placeOrder}>{buttonText}</button>;
+      return (
+        <button className="account-button" onClick={placeOrder}>
+          {buttonText}
+        </button>
+      );
     } else if (cartItems.length === 0 && currentUser) {
-      return <p>You have no items in your cart.</p>;
+      return <p className="order-message">You have no items in your cart.</p>;
     } else if (cartItems.length === 0) {
-      return <p>You have no items in your cart.</p>;
+      return <p className="order-message">You have no items in your cart.</p>;
     } else {
-      return <p>Create an account to continue your payment.</p>;
+      return (
+        <p className="order-message">
+          <Link className="account-link" to="/signup">
+            Create an account
+          </Link>{" "}
+          to continue your payment.
+        </p>
+      );
     }
   }
 
@@ -39,10 +52,10 @@ export default function Checkout() {
   }
 
   return (
-    <div>
-      <h1>Check Out</h1>
-      {cartItemElements}
-      <p>Total: {totalCost}</p>
+    <div className="account-container">
+      <h1 className="checkout-title">Check Out</h1>
+      <div className="cart-items">{cartItemElements}</div>
+      <p className="total">Total: {totalCost}</p>
       {orderMessage()}
     </div>
   );

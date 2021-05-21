@@ -1,0 +1,16 @@
+.profile-info {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile-button {
+  margin-top: 2rem;
+}
+
+strong {
+  margin-right: 10px;
+}

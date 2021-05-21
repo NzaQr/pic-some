@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -18,22 +19,24 @@ export default function Dashboard() {
     }
   }
   return (
-    <>
-      <div>
-        <div>
-          <h2 className="text-center mb-4">Profile</h2>
-          {error && <h1 variant="danger">{error}</h1>}
-          <strong>Email:</strong> {currentUser.email}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
-          </Link>
-        </div>
-      </div>
+    <div className="account-container">
+      <h2 className="account-title">Profile</h2>
+      {error && <p className="error">{error}</p>}
+      <p className="profile-info">
+        <strong>Email:</strong>
+        {`${currentUser.email}`}
+      </p>
+      <Link to="/update-profile" className="account-link">
+        Update Profile
+      </Link>
       <div className="w-100 text-center mt-2">
-        <button variant="link" onClick={handleLogout}>
+        <button
+          className="account-button profile-button"
+          onClick={handleLogout}
+        >
           Log Out
         </button>
       </div>
-    </>
+    </div>
   );
 }
