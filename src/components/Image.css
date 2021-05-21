@@ -1,0 +1,36 @@
+.favorite {
+  color: #ea453c;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.cart {
+  color: #ace6ec;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-grid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}

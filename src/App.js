@@ -1,13 +1,13 @@
 import React from "react";
-import Signup from "./components/Signup";
+import Signup from "./pages/Signup";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import ForgotPassword from "./components/ForgotPassword";
-import UpdateProfile from "./components/UpdateProfile";
-import Photos from "./components/Photos";
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdateProfile from "./pages/UpdateProfile";
+import Photos from "./pages/Photos";
 
 function App() {
   return (
