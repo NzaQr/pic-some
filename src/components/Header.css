@@ -19,7 +19,10 @@
 .user-link:visited,
 .title-link:active,
 .cart-link:active,
-.user-link:active {
+.user-link:active,
+.title-link:link,
+.cart-link:link,
+.user-link:link {
   color: #1d3557;
 }
 
@@ -42,6 +45,7 @@
 .user-link {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 800px) {
@@ -70,5 +74,9 @@
   .header-user {
     width: 3rem;
     height: 3rem;
+  }
+
+  .header-title {
+    margin: 2rem 0;
   }
 }

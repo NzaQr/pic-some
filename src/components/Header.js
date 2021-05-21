@@ -22,18 +22,18 @@ export default function Header() {
   return (
     <div className="header">
       <Link to="/" className="title-link">
-        <h2>Pic Some</h2>
+        <h1 className="header-title">Pic Some</h1>
       </Link>
       <div className="header-links">
-        <Link to="/account" className="user-link">
+        <Link to="/dashboard" className="user-link">
           {currentUser ? (
-            <h2 className="header-account">Your Account</h2>
+            <h2 className="header-account">My Account</h2>
           ) : (
             <h2 className="header-account">Log In</h2>
           )}
           <AiOutlineUser className="header-user" />
         </Link>
-        <Link to="/cart" className="cart-link">
+        <Link to="/checkout" className="cart-link">
           {cart}
         </Link>
       </div>
