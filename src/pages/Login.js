@@ -27,7 +27,7 @@ export default function Signup() {
 
   return (
     <div className="account-container">
-      <h1 className="login-title">Log in</h1>
+      <h1 className="account-title">Log in</h1>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>Email address</label>

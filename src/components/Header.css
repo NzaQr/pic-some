@@ -79,4 +79,8 @@
   .header-title {
     margin: 2rem 0;
   }
+
+  .title-link {
+    font-size: 1.5vw;
+  }
 }
