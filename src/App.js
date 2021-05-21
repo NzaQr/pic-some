@@ -8,25 +8,26 @@ import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdateProfile from "./pages/UpdateProfile";
 import Photos from "./pages/Photos";
+import Header from "./components/Header";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <div>
-        <Router>
-          <AuthProvider>
-            <Switch>
-              <PrivateRoute exact path="/" component={Dashboard} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/shop" component={Photos} />
-              <Route path="/forgot-password" component={ForgotPassword} />
-            </Switch>
-          </AuthProvider>
-        </Router>
-      </div>
-    </div>
+    <>
+      <Router>
+        <AuthProvider>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Photos} />
+            <PrivateRoute exact path="/account" component={Dashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </>
   );
 }
 

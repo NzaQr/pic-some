@@ -1,0 +1,74 @@
+.header {
+  font-family: "Fredoka One", cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  color: #1d3557;
+  padding: 0 1rem;
+}
+
+.title-link,
+.cart-link,
+.user-link {
+  text-decoration: none;
+}
+
+.title-link:visited,
+.cart-link:visited,
+.user-link:visited,
+.title-link:active,
+.cart-link:active,
+.user-link:active {
+  color: #1d3557;
+}
+
+.header-cart,
+.header-user {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header-user {
+  margin-right: 1.5rem;
+}
+
+.header-account {
+  display: none;
+  margin-right: 1rem;
+}
+
+.header-links,
+.user-link {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .header {
+    padding: 0 2rem;
+  }
+
+  .title-link {
+    font-size: 2vw;
+  }
+
+  .header-cart,
+  .header-user {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .header-account {
+    display: block;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-cart,
+  .header-user {
+    width: 3rem;
+    height: 3rem;
+  }
+}
