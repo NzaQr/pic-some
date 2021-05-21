@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import "./ForgotPassword.css";
 
 export default function ForgotPassword() {
   const emailRef = useRef();
@@ -24,30 +25,29 @@ export default function ForgotPassword() {
   }
 
   return (
-    <>
-      <div>
-        <div>
-          <h2 className="text-center mb-4">Password Reset</h2>
-          {error && <h1 variant="danger">{error}</h1>}
-          {message && <h1 variant="success">{message}</h1>}
+    <div className="account-container">
+      <h1 className="reset-title">Password Reset</h1>
+      {error && <p>{error}</p>}
+      {message && <p>{message}</p>}
 
-          <form onSubmit={handleSubmit}>
-            <div id="email">
-              <div>Email</div>
-              <input type="email" ref={emailRef} required />
-            </div>
-            <button disabled={loading} className="w-100" type="submit">
-              Reset Password
-            </button>
-          </form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Log in</Link>
-          </div>
-        </div>
+      <form onSubmit={handleSubmit}>
+        <label>Email address</label>
+        <input type="email" ref={emailRef} required />
+        <button disabled={loading} className="account-button" type="submit">
+          Reset Password
+        </button>
+      </form>
+      <div className="account-help">
+        <Link className="account-link" to="/login">
+          Log in
+        </Link>
       </div>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="account-help">
+        Need an account?{" "}
+        <Link className="account-link" to="/signup">
+          Sign Up
+        </Link>
       </div>
-    </>
+    </div>
   );
 }

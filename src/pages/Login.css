@@ -1,0 +1,87 @@
+.account-container {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  color: #1d3557;
+}
+
+.login-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.error {
+  color: #e63946;
+  font-family: "Roboto", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #1d3557;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 2rem;
+}
+
+.account-button {
+  font-family: "Fredoka One", cursive;
+  text-transform: uppercase;
+  background-color: #1d3557;
+  color: #f8f9fa;
+  padding: 10px;
+  border-color: #1d3557;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.forgot-password,
+.account-help,
+.account-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.forgot-password:visited,
+.forgot-password:active,
+.account-link:visited,
+.account-link:active {
+  color: #457b9d;
+}
+
+.account-help {
+  margin-top: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .account-container {
+    width: 20%;
+  }
+
+  .login-title {
+    font-size: 3vw;
+  }
+
+  .forgot-password,
+  .account-link {
+    text-decoration: none;
+  }
+
+  .forgot-password:hover,
+  .account-link:hover {
+    text-decoration: underline;
+  }
+}

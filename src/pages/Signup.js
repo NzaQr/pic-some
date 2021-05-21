@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-
+import "./Signup.css";
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -17,7 +17,7 @@ export default function Signup() {
     //validations checks
     //if 2 passwords are not the same
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
+      return setError("Passwords do not match.");
     }
 
     try {
@@ -26,39 +26,32 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       history.push("/");
     } catch {
-      setError("Failed to create an account");
+      setError("Failed to create an account.");
     }
     setLoading(false);
   }
 
   return (
-    <>
-      <div>
-        <div>
-          <h2 className="text-center mb-4">Sign Up</h2>
-          {error && <h1 variant="danger">{error}</h1>}
-          <form onSubmit={handleSubmit}>
-            <div id="email">
-              <label>Email</label>
-              <input type="email" ref={emailRef} required />
-            </div>
-            <div id="password">
-              <label>Password</label>
-              <input type="password" ref={passwordRef} required />
-            </div>
-            <div id="password-confirm">
-              <label>Password Confirmation</label>
-              <input type="password" ref={passwordConfirmRef} required />
-            </div>
-            <button disabled={loading} className="w-100" type="submit">
-              Sign Up
-            </button>
-          </form>
-        </div>
+    <div className="account-container">
+      <h1 className="signup-title">Sign Up</h1>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <label>Email</label>
+        <input type="email" ref={emailRef} required />
+        <label>Password</label>
+        <input type="password" ref={passwordRef} required />
+        <label>Password Confirm</label>
+        <input type="password" ref={passwordConfirmRef} required />
+        <button disabled={loading} className="account-button" type="submit">
+          Sign Up
+        </button>
+      </form>
+      <div className="account-help">
+        Already have an account?{" "}
+        <Link className="account-link" to="/login">
+          Log In
+        </Link>
       </div>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
-    </>
+    </div>
   );
 }

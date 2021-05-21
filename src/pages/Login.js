@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import "./Login.css";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -17,40 +18,35 @@ export default function Signup() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/account");
+      history.push("/dashboard");
     } catch {
-      setError("Failed to log in");
+      setError("Incorrect email or password.");
     }
     setLoading(false);
   }
 
   return (
-    <>
-      <div>
-        <div>
-          <h2 className="text-center mb-4">Log in</h2>
-          {error && <h1 variant="danger">{error}</h1>}
-          <form onSubmit={handleSubmit}>
-            <div id="email">
-              <label>Email</label>
-              <input type="email" ref={emailRef} required />
-            </div>
-            <div id="password">
-              <label>Password</label>
-              <input type="password" ref={passwordRef} required />
-            </div>
-            <button disabled={loading} className="w-100" type="submit">
-              Log in
-            </button>
-          </form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
-        </div>
+    <div className="account-container">
+      <h1 className="login-title">Log in</h1>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <label>Email address</label>
+        <input type="email" ref={emailRef} required />
+        <label>Password</label>
+        <input type="password" ref={passwordRef} required />
+        <button disabled={loading} className="account-button" type="submit">
+          Log in
+        </button>
+      </form>
+      <Link className="forgot-password" to="/forgot-password">
+        Forgot Password?
+      </Link>
+      <div className="account-help">
+        Need an account?{" "}
+        <Link className="account-link" to="/signup">
+          Sign Up
+        </Link>
       </div>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
-    </>
+    </div>
   );
 }

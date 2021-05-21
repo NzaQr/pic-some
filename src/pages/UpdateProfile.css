@@ -1,0 +1,11 @@
+.update-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1200px) {
+  .update-title {
+    font-size: 2.5vw;
+  }
+}
