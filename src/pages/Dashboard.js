@@ -8,7 +8,7 @@ export default function Dashboard() {
   const { currentUser, logout } = useAuth();
   const history = useHistory();
 
-  async function handleLogout() {
+  const handleLogout = async () => {
     setError("");
 
     try {
@@ -17,7 +17,8 @@ export default function Dashboard() {
     } catch {
       setError("Failed to log out");
     }
-  }
+  };
+
   return (
     <div className="account-container">
       <h2 className="account-title">Profile</h2>
@@ -29,7 +30,7 @@ export default function Dashboard() {
       <Link to="/update-profile" className="account-link">
         Update Profile
       </Link>
-      <div className="w-100 text-center mt-2">
+      <div>
         <button
           className="account-button profile-button"
           onClick={handleLogout}

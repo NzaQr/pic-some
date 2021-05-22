@@ -11,7 +11,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -23,7 +23,7 @@ export default function Signup() {
       setError("Incorrect email or password.");
     }
     setLoading(false);
-  }
+  };
 
   return (
     <div className="account-container">

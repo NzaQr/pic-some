@@ -4,7 +4,7 @@ import { PhotosContext } from "../contexts/PhotoContext";
 import { ImageSize } from "../utils";
 import "./Photos.css";
 
-function Photos() {
+export default function Photos() {
   const { allPhotos } = useContext(PhotosContext);
   const imageElements = allPhotos.map((img, i) => (
     <Image key={img.id} img={img} className={ImageSize(i)} />
@@ -12,5 +12,3 @@ function Photos() {
 
   return <main className="photos">{imageElements}</main>;
 }
-
-export default Photos;

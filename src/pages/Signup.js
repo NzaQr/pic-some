@@ -11,11 +11,9 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //validations checks
-    //if 2 passwords are not the same
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match.");
     }
@@ -29,7 +27,7 @@ export default function Signup() {
       setError("Failed to create an account.");
     }
     setLoading(false);
-  }
+  };
 
   return (
     <div className="account-container">

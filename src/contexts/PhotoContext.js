@@ -14,7 +14,7 @@ function PhotosContextProvider({ children }) {
       .then((data) => setAllPhotos(data));
   }, []);
 
-  function toggleFavorite(id) {
+  const toggleFavorite = (id) => {
     const updatedArr = allPhotos.map((photo) => {
       if (photo.id === id) {
         return {
@@ -25,19 +25,15 @@ function PhotosContextProvider({ children }) {
       return photo;
     });
     setAllPhotos(updatedArr);
-  }
+  };
 
-  function addToCart(newItem) {
+  const addToCart = (newItem) =>
     setCartItems((prevItems) => [...prevItems, newItem]);
-  }
 
-  function removeFromCart(id) {
+  const removeFromCart = (id) =>
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  }
 
-  function emptyCart() {
-    setCartItems([]);
-  }
+  const emptyCart = () => setCartItems([]);
 
   const value = {
     allPhotos,

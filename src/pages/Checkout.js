@@ -20,7 +20,7 @@ export default function Checkout() {
     <CartItem key={item.id} item={item} />
   ));
 
-  function orderMessage() {
+  const orderMessage = () => {
     if (cartItems.length > 0 && currentUser) {
       return (
         <button className="account-button" onClick={placeOrder}>
@@ -41,15 +41,15 @@ export default function Checkout() {
         </p>
       );
     }
-  }
+  };
 
-  function placeOrder() {
+  const placeOrder = () => {
     setButtonText("Ordering...");
     setTimeout(() => {
       setButtonText("Place Order");
       emptyCart();
     }, 3000);
-  }
+  };
 
   return (
     <div className="checkout-container">

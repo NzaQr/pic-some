@@ -10,15 +10,10 @@ export default function Image({ img, className }) {
   const { toggleFavorite, addToCart, cartItems, removeFromCart } =
     useContext(PhotosContext);
 
-  function handleEnter() {
-    setHovered(true);
-  }
+  const handleEnter = () => setHovered(true);
+  const handleLeave = () => setHovered(false);
 
-  function handleLeave() {
-    setHovered(false);
-  }
-
-  function favoriteIcon() {
+  const favoriteIcon = () => {
     if (img.isFavorite) {
       return (
         <BsHeartFill
@@ -31,9 +26,9 @@ export default function Image({ img, className }) {
         <BsHeart className="favorite" onClick={() => toggleFavorite(img.id)} />
       );
     }
-  }
+  };
 
-  function cartIcon() {
+  const cartIcon = () => {
     const alreadyInCart = cartItems.some((item) => item.id === img.id);
 
     if (alreadyInCart) {
@@ -48,7 +43,7 @@ export default function Image({ img, className }) {
         <RiShoppingCartLine className="cart" onClick={() => addToCart(img)} />
       );
     }
-  }
+  };
 
   return (
     <div

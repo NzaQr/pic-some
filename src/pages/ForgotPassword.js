@@ -9,7 +9,8 @@ export default function ForgotPassword() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  async function handleSubmit(e) {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -22,7 +23,7 @@ export default function ForgotPassword() {
       setError("Failed to reset password");
     }
     setLoading(false);
-  }
+  };
 
   return (
     <div className="account-container">

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "./UpdateProfile.css";
+
 export default function UpdateProfile() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -11,7 +12,7 @@ export default function UpdateProfile() {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -39,7 +40,7 @@ export default function UpdateProfile() {
       .finally(() => {
         setLoading(false);
       });
-  }
+  };
 
   return (
     <div className="account-container">
