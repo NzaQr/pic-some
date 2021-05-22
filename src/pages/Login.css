@@ -58,7 +58,9 @@ input {
 .forgot-password:visited,
 .forgot-password:active,
 .account-link:visited,
-.account-link:active {
+.account-link:active,
+.forgot-password:link,
+.account-link:link {
   color: #457b9d;
 }
 
